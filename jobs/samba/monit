@@ -1,5 +1,5 @@
 check process smb
   with pidfile /var/vcap/sys/run/smb/pid
-  start program "/var/vcap/jobs/smb/bin/ctl start"
-  stop program "/var/vcap/jobs/smb/bin/ctl stop"  
+  start program "/var/vcap/jobs/samba/bin/ctl start"
+  stop program "/var/vcap/jobs/samba/bin/ctl stop"  
   group vcap
