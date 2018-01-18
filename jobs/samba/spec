@@ -4,6 +4,7 @@ name: samba
 templates: 
     bin/pre-start.sh.erb: bin/pre-start
     smb.conf.erb: smb.conf 
+    get_credentials.sh.erb: bin/get_credentials
 
 packages: []
 

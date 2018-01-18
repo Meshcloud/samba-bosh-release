@@ -24,7 +24,7 @@ jobs:
 - name: samba
   release: smb
   instances: 1
-  vm_type: default
+  vm_type: tiny
   persistent_disk: 10000
   stemcell: default
   jobs:
