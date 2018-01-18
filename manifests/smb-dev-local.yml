@@ -21,7 +21,7 @@ stemcells:
     version: latest 
 
 jobs: 
-- name: smb
+- name: samba
   release: smb
   instances: 1
   vm_type: default
@@ -29,12 +29,12 @@ jobs:
   stemcell: default
   jobs:
   - release: smb
-    name: smb
+    name: samba
   networks:
   - name: default
   properties: 
     smb:
-      network:
-        172.16.105.0/24
+      username:
+        testuser
 
          

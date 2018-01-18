@@ -14,8 +14,8 @@ case $1 in
             sleep 2
             status=$(cat /home/vcap/.status)
         done
-        
         echo $(pgrep smb) > $PIDFILE
+        ;;
     stop)
         kill -9 $(pgrep -f 'nfsd')
         kill -9 `cat $PIDFILE`
