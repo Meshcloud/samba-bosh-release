@@ -1,0 +1,28 @@
+#!/bin/bash 
+set -x
+
+#Variable Setup
+STORAGEPATH="/var/vcap/store/smbshare"
+PASSWD=$(cat /proc/sys/kernel/random/uuid | sed -e 's/-//g')
+BOSHDIR="/var/vcap/jobs/nfs/"
+USERNAME=<%= p("smb.username") %>
+#install packages via apt
+apt-get update
+apt-get install samba -y
+#create user and set smb password
+useradd -d /home/$USERNAME $USERNAME
+echo -e "$PASSWD\n$PASSWD" | smbpasswd $USERNAME
+#Create the directory and set User Permissions
+mkdir -p $STORAGEPATH
+chown $USERNAME $STORAGEPATH
+chmod -R 700 $STORAGEPATH
+#changing smb.conf smb conf
+cat "$BOSHDIR/smb.conf" | tee -a "/etc/samba/smb.conf"
+#restart service 
+sudo service smbd restart
+
+export PASSWD=$PASSWD
+echo "done" | tee "/home/vcap/.status"
+exit 0 
+
+

@@ -1,0 +1,8 @@
+[volume]
+comment = Share for the Volume Service Broker
+path = /var/vcap/store/smbshare
+valid users = <%= p(smb.username) %>
+public = no
+writable = yes
+printable = no
+create mask = 0765

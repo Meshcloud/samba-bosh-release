@@ -1,0 +1,29 @@
+#!/bin/bash 
+
+RUN_DIR=/var/vcap/sys/run/nfs
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+    
+    start)
+
+        mkdir -p $RUN_DIR
+        chown -R vcap:vcap $RUN_DIR
+        status=$(cat /home/vcao/.status)
+        while [ "$status" != "done" ]; do
+            sleep 2
+            status=$(cat /home/vcap/.status)
+        done
+        
+        echo $(pgrep smb) > $PIDFILE
+    stop)
+        kill -9 $(pgrep -f 'nfsd')
+        kill -9 `cat $PIDFILE`
+        rm -f $PIDFILE
+
+        ;;
+
+    *)
+        echo "Usage: ctl {start|stop}" ;;
+
+esac    

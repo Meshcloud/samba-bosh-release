@@ -1,0 +1,14 @@
+---
+name: samba
+
+templates: 
+    bin/pre-start.sh.erb: bin/pre-start
+    smb.conf.erb: smb.conf 
+
+packages: []
+
+
+properties:
+    smb.username:
+        description: "Provide Username that will be the user to mount SMB"
+    
