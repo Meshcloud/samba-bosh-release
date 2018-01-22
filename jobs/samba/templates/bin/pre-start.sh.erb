@@ -1,31 +1,30 @@
 #!/bin/bash 
 set -x
-
 #Variable Setup
 STORAGEPATH="/var/vcap/store/smbshare"
-PASSWD=$(cat /proc/sys/kernel/random/uuid | sed -e 's/-//g')
 BOSHDIR="/var/vcap/jobs/samba/"
-USERNAME=<%= p("smb.username") %>
+PASSWD_FILE="/var/vcap/store/.passwd*" 
+USERGROUP=<%= p("smb.usergroup") %>
 #install packages via apt
 apt-get update
 apt-get install samba -y
-#create user and set smb password
-useradd -d /home/$USERNAME $USERNAME
-echo -e "$PASSWD\n$PASSWD" | smbpasswd -a $USERNAME
+
 #Create the directory and set User Permissions
 mkdir -p $STORAGEPATH
-chown $USERNAME $STORAGEPATH
+chown $USERGROUP $STORAGEPATH
 chmod -R 700 $STORAGEPATH
 #changing smb.conf smb conf
 cat "$BOSHDIR/smb.conf" | tee -a "/etc/samba/smb.conf"
 #restart service 
 sudo service smbd restart
-
 #move credential script to bin
 cp "$BOSHDIR/bin/get_credentials" "/usr/local/bin/get_credentials.sh"
 chmod a+x /usr/local/bin/get_credentials.sh
 
-echo $PASSWD | tee "/home/vcap/.passwd" 
+# move deletcredentials script to bin 
+cp "$BOSHDIR/bin/delete_credentials" "/usr/local/bin/delete_credentials.sh"
+chmod a+x /usr/local/bin/delete_credentials.sh
+
 echo "done" | tee "/home/vcap/.status"
 exit 0 
 

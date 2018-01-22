@@ -34,7 +34,7 @@ jobs:
   - name: default
   properties: 
     smb:
-      username:
+      usergroup:
         testuser
 
          

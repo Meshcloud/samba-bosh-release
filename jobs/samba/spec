@@ -6,11 +6,12 @@ templates:
     smb.conf.erb: smb.conf 
     get_credentials.sh.erb: bin/get_credentials
     bin/ctl.erb: bin/ctl
+    delete_credentials.sh.erb: bin/delete_credentials
 
 packages: []
 
 
 properties:
-    smb.username:
-        description: "Provide Username that will be the user to mount SMB"
+    smb.usergroup:
+        description: "Provide USERGROUP that will be the user to mount SMB"
     

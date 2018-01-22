@@ -1,0 +1,67 @@
+# abort script on any command that exits with a non zero value
+set -e -x
+
+function packageInstallation(){
+  echo "Extracting $1..."   
+tar xzvf $1-$2.tar.gz
+
+echo "Installing $1..."
+pushd $1-$2
+  /var/vcap/packages/python/bin/python setup.py install --prefix=$BOSH_INSTALL_TARGET
+popd
+}
+
+PYTHON_VERSION=2.7.14
+PIP_VERSION=9.0.1
+SETUPTOOLS_VERSION=38.2.4
+PIKA_VERSION=0.11.2
+REQUESTS_VERSION=2.18.4
+CERTIFI_VERSION=2017.11.5
+URLLIB_VERSION=1.22
+IDNA_VERSION=2.6
+CHARDET_VERSION=3.0.4
+
+echo "Copying compile.env..."
+mkdir ${BOSH_INSTALL_TARGET}/bosh
+cp runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
+cp compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+
+cp -r python/* ${BOSH_INSTALL_TARGET}
+cp -r setuptools/* ${BOSH_INSTALL_TARGET}
+cp -r pip/* ${BOSH_INSTALL_TARGET}
+cp -r pika/* ${BOSH_INSTALL_TARGET}
+cp -r requests/* ${BOSH_INSTALL_TARGET}
+cp -r certifi/* ${BOSH_INSTALL_TARGET}
+cp -r urllib/* ${BOSH_INSTALL_TARGET}
+cp -r idna/* ${BOSH_INSTALL_TARGET}
+cp -r chardet/* ${BOSH_INSTALL_TARGET}
+
+cd ${BOSH_INSTALL_TARGET}
+
+echo "Extracting python..."
+tar xzvf Python-${PYTHON_VERSION}.tgz
+
+echo "Building python..."
+pushd Python-${PYTHON_VERSION}
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make
+  make install
+popd
+
+echo "Creating the site packages..."
+mkdir -p $BOSH_INSTALL_TARGET/lib/python2.7/site-packages
+
+echo "Setting the PYTHON_PATH with site packages..."
+export PYTHON_PATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages
+
+packageInstallation "setuptools" $SETUPTOOLS_VERSION
+packageInstallation "pip" $PIP_VERSION
+packageInstallation "chardet" $CHARDET_VERSION
+packageInstallation "idna" $IDNA_VERSION
+packageInstallation "urllib3" $URLLIB_VERSION
+packageInstallation "certifi" $CERTIFI_VERSION
+packageInstallation "pika" $PIKA_VERSION
+packageInstallation "pip" $PIP_VERSION
+packageInstallation "requests" $REQUESTS_VERSION
+
+
