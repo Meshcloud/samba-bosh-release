@@ -36,5 +36,10 @@ jobs:
     smb:
       usergroup:
         testuser
+    rest:
+      user:
+        test
+      password:
+        test    
 
          

@@ -7,6 +7,7 @@ templates:
     get_credentials.sh.erb: bin/get_credentials
     bin/ctl.erb: bin/ctl
     delete_credentials.sh.erb: bin/delete_credentials
+    backend.py: backend.py
 
 packages: []
 
@@ -14,4 +15,8 @@ packages: []
 properties:
     smb.usergroup:
         description: "Provide USERGROUP that will be the user to mount SMB"
+    rest.user:
+        description: "the user for basic auth for rest"
+    rest.password:
+        description: "the user for basic auth for rest"        
     

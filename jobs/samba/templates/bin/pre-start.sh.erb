@@ -8,8 +8,15 @@ USERGROUP=<%= p("smb.usergroup") %>
 #install packages via apt
 apt-get update
 apt-get install samba -y
+#install python
+apt-get install python-setuptools python-dev build-essential 
+easy_install pip 
+pip install --upgrade virtualenv 
+pip install Flask 
+pip install Flask-BasicAuth
 
 #Create the directory and set User Permissions
+groupadd $USERGROUP
 mkdir -p $STORAGEPATH
 chown $USERGROUP $STORAGEPATH
 chmod -R 700 $STORAGEPATH
@@ -20,7 +27,8 @@ sudo service smbd restart
 #move credential script to bin
 cp "$BOSHDIR/bin/get_credentials" "/usr/local/bin/get_credentials.sh"
 chmod a+x /usr/local/bin/get_credentials.sh
-
+# run bakcend
+python backend.py &
 # move deletcredentials script to bin 
 cp "$BOSHDIR/bin/delete_credentials" "/usr/local/bin/delete_credentials.sh"
 chmod a+x /usr/local/bin/delete_credentials.sh
