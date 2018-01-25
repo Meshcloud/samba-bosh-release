@@ -15,7 +15,7 @@ basic_auth = BasicAuth(app)
 @app.route("/user/<username>", methods = ["POST"])
 def create_credentials(username):
     password = request.get_json(force=True)
-    exit_code = os.system('echo '+ username + " " + password["password"])
+    exit_code = os.system('get_credentials.sh '+ username + " " + password["password"])
     returnValue = {}
     if exit_code < 256:
         returnValue["password"] = password["password"]
@@ -38,4 +38,4 @@ def delete_credentials(username):
     
 if __name__ == '__main__':
     app.config['BASIC_AUTH_FORCE'] = True
-    app.run(debug=True) 
+    app.run(host = '0.0.0.0',port=5000) 
