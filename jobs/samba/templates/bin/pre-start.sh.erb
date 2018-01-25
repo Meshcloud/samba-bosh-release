@@ -13,9 +13,9 @@ apt-get install samba -y
 wget https://bootstrap.pypa.io/get-pip.py 
 sudo python get-pip.py  
 
-sudo pip install --upgrade virtualenv 
-sudo pip install Flask 
-sudo pip install Flask-BasicAuth
+sudo /usr/local/bin/pip install --upgrade virtualenv 
+sudo /usr/local/bin/pip install Flask 
+sudo /usr/local/bin/pip install Flask-BasicAuth
 
 #Create the directory and set User Permissions
 groupadd $USERGROUP
