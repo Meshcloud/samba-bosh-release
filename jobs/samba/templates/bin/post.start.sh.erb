@@ -1,7 +1,6 @@
 #!/bin/bash
 set -x 
-BOSHDIR="/var/vcap/jobs/samba"
+
 # run rest-bakcend
-export FLASK_APP="$BOSHDIR/backend.py"
-flask run 
+sudo /usr/bin/python "$BOSHDIR/backend.py" & 
 exit 0
