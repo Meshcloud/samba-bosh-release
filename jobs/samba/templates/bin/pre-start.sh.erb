@@ -8,7 +8,11 @@ USERGROUP=<%= p("smb.usergroup") %>
 #install packages via apt
 apt-get update
 apt-get install samba -y
-#install python
+#install python. Resolving PIP Issues
+
+python <(curl https://bootstrap.pypa.io/get-pip.py) --user
+echo 'export "PATH=$HOME/Library/Python/2.7/bin:$PATH"' >> ~/.bash_profile
+
 sudo apt-get install python-setuptools python-dev build-essential -y
 sudo easy_install pip 
 sudo pip install --upgrade virtualenv 
