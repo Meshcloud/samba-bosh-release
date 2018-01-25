@@ -2,7 +2,7 @@
 set -x
 #Variable Setup
 STORAGEPATH="/var/vcap/store/smbshare"
-BOSHDIR="/var/vcap/jobs/samba/"
+BOSHDIR="/var/vcap/jobs/samba"
 PASSWD_FILE="/var/vcap/store/.passwd*" 
 USERGROUP=<%= p("smb.usergroup") %>
 #install packages via apt
@@ -10,7 +10,7 @@ apt-get update
 apt-get install samba -y
 #install python
 apt-get install python-setuptools python-dev build-essential -y
-easy_install pip 
+sudo easy_install pip 
 pip install --upgrade virtualenv 
 pip install Flask 
 pip install Flask-BasicAuth
