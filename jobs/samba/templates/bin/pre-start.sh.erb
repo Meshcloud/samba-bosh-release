@@ -9,11 +9,11 @@ USERGROUP=<%= p("smb.usergroup") %>
 apt-get update
 apt-get install samba -y
 #install python
-apt-get install python-setuptools python-dev build-essential -y
+sudo apt-get install python-setuptools python-dev build-essential -y
 sudo easy_install pip 
-pip install --upgrade virtualenv 
-pip install Flask 
-pip install Flask-BasicAuth
+sudo pip install --upgrade virtualenv 
+sudo pip install Flask 
+sudo pip install Flask-BasicAuth
 
 #Create the directory and set User Permissions
 groupadd $USERGROUP
