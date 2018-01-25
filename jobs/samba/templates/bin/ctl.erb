@@ -10,6 +10,7 @@ case $1 in
         mkdir -p $RUN_DIR
         chown -R vcap:vcap $RUN_DIR
         status=$(cat /home/vcap/.status)
+        sudo /usr/bin/python "$BOSHDIR/backend.py" & 
         while [ "$status" != "done" ]; do
             sleep 2
             status=$(cat /home/vcap/.status)
