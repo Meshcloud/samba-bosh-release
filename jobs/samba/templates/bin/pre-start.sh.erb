@@ -33,8 +33,7 @@ chmod a+x /usr/local/bin/get_credentials.sh
 cp "$BOSHDIR/bin/delete_credentials" "/usr/local/bin/delete_credentials.sh"
 chmod a+x /usr/local/bin/delete_credentials.sh
 
-# run bakcend
-sudo /usr/bin/python "$BOSHDIR/backend.py" & 
+
 
 echo "done" | tee "/home/vcap/.status"
 exit 0 
