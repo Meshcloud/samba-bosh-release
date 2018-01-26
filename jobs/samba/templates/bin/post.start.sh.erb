@@ -1,0 +1,6 @@
+#!/bin/bash
+set -x 
+BOSHDIR="/var/vcap/jobs/samba"
+# run rest-bakcend
+su - root -c  "sudo /usr/bin/python '$BOSHDIR/backend.py' & "
+exit 0

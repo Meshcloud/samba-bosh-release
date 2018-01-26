@@ -21,7 +21,7 @@ sudo /usr/local/bin/pip install Flask-BasicAuth
 groupadd $USERGROUP
 mkdir -p $STORAGEPATH
 chown root:$USERGROUP $STORAGEPATH
-chmod -R 700 $STORAGEPATH
+chmod -R 770 $STORAGEPATH
 #changing smb.conf smb conf
 cat "$BOSHDIR/smb.conf" | tee -a "/etc/samba/smb.conf"
 #restart service 
@@ -29,11 +29,11 @@ sudo service smbd restart
 #move credential script to bin
 cp "$BOSHDIR/bin/get_credentials" "/usr/local/bin/get_credentials.sh"
 chmod a+x /usr/local/bin/get_credentials.sh
-# run bakcend
-sudo /usr/bin/python "$BOSHDIR/backend.py" &
 # move deletcredentials script to bin 
 cp "$BOSHDIR/bin/delete_credentials" "/usr/local/bin/delete_credentials.sh"
 chmod a+x /usr/local/bin/delete_credentials.sh
+
+
 
 echo "done" | tee "/home/vcap/.status"
 exit 0 
