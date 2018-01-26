@@ -21,7 +21,7 @@ sudo /usr/local/bin/pip install Flask-BasicAuth
 groupadd $USERGROUP
 mkdir -p $STORAGEPATH
 chown root:$USERGROUP $STORAGEPATH
-chmod -R 700 $STORAGEPATH
+chmod -R 770 $STORAGEPATH
 #changing smb.conf smb conf
 cat "$BOSHDIR/smb.conf" | tee -a "/etc/samba/smb.conf"
 #restart service 
