@@ -10,8 +10,10 @@ templates:
     delete_credentials.sh.erb: bin/delete_credentials
     backend.py: backend.py
 
-packages: []
-
+packages: 
+- perl
+- python
+- samba
 
 properties:
     smb.usergroup:

@@ -11,35 +11,34 @@ pushd $1-$2
 popd
 }
 
-PYTHON_VERSION=2.7.14
-PIP_VERSION=9.0.1
-SETUPTOOLS_VERSION=38.2.4
-PIKA_VERSION=0.11.2
-REQUESTS_VERSION=2.18.4
-CERTIFI_VERSION=2017.11.5
-URLLIB_VERSION=1.22
-IDNA_VERSION=2.6
-CHARDET_VERSION=3.0.4
+PYTHON_VERSION=2.7
+WERKZEUG_VERSION
+PYCRYPTO_VERSION=2.6.1
+JINJA_VERSION=2.10
+SETUPTOOLS_VERSION=38.4.0
+FLASK_VERSION=0.12.2
+MARKUPSAFE_VERSION=1.0
+ITSDANGEROUS_VERSION=0.24
+CLICK_VERSION=6.7
 
-echo "Copying compile.env..."
-mkdir ${BOSH_INSTALL_TARGET}/bosh
-cp runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
-cp compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+
 
 cp -r python/* ${BOSH_INSTALL_TARGET}
+cp -r pycrypto/* ${BOSH_INSTALL_TARGET}
+cp -r werkzeug/* ${BOSH_INSTALL_TARGET}
+cp -r jinja/* ${BOSH_INSTALL_TARGET}
 cp -r setuptools/* ${BOSH_INSTALL_TARGET}
-cp -r pip/* ${BOSH_INSTALL_TARGET}
-cp -r pika/* ${BOSH_INSTALL_TARGET}
-cp -r requests/* ${BOSH_INSTALL_TARGET}
-cp -r certifi/* ${BOSH_INSTALL_TARGET}
-cp -r urllib/* ${BOSH_INSTALL_TARGET}
-cp -r idna/* ${BOSH_INSTALL_TARGET}
-cp -r chardet/* ${BOSH_INSTALL_TARGET}
+cp -r flask/* ${BOSH_INSTALL_TARGET}
+cp -r markupsafe/* ${BOSH_INSTALL_TARGET}
+cp -r itsdangerous/* ${BOSH_INSTALL_TARGET}
+cp -r click/* ${BOSH_INSTALL_TARGET}
+
+
 
 cd ${BOSH_INSTALL_TARGET}
 
 echo "Extracting python..."
-tar xzvf Python-${PYTHON_VERSION}.tgz
+tar xzvf Python-${PYTHON_VERSION}.tar
 
 echo "Building python..."
 pushd Python-${PYTHON_VERSION}
@@ -55,13 +54,12 @@ echo "Setting the PYTHON_PATH with site packages..."
 export PYTHON_PATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages
 
 packageInstallation "setuptools" $SETUPTOOLS_VERSION
-packageInstallation "pip" $PIP_VERSION
-packageInstallation "chardet" $CHARDET_VERSION
-packageInstallation "idna" $IDNA_VERSION
-packageInstallation "urllib3" $URLLIB_VERSION
-packageInstallation "certifi" $CERTIFI_VERSION
-packageInstallation "pika" $PIKA_VERSION
-packageInstallation "pip" $PIP_VERSION
-packageInstallation "requests" $REQUESTS_VERSION
+packageInstallation "Werkzeug" $WERKZEUG_VERSION
+packageInstallation "pycrypto" $PYCRYPTO_VERSION
+packageInstallation "Jinja" $JINJA_VERSION
+packageInstallation "MarkupSafe" $MARKUPSAFE_VERSION
+packageInstallation "itsdangerous" $ITSDANGEROUS_VERSION
+packageInstallation "click" $ITSDANGEROUS_VERSION
+packageInstallation "flask" $FLASK_VERSION
 
 

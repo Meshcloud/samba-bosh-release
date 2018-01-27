@@ -1,0 +1,14 @@
+set -e
+cp -r perl/* ${BOSH_INSTALL_TARGET}
+cd ${BOSH_INSTALL_TARGET}
+PERL_VERSION=5.20.1
+
+echo "Extracting SMB-Files"
+tar xzvf perl-${PERL_VERSION}.tgz
+
+echo "Building python..."
+pushd perl-${PERL_VERSION}
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make
+  make install
+popd

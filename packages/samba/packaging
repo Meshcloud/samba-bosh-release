@@ -1,1 +1,14 @@
 set -e
+cp -r python/* ${BOSH_INSTALL_TARGET}
+cd ${BOSH_INSTALL_TARGET}
+SAMBA_VERSION=4.74
+
+echo "Extracting SMB-Files"
+tar xzvf samba-${SAMBA_VERSION}.tgz
+
+echo "Building python..."
+pushd samba-${SAMBA_VERSION}
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make
+  make install
+popd
