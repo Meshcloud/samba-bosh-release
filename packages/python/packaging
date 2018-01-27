@@ -38,7 +38,7 @@ cp -r click/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}
 
 echo "Extracting python..."
-tar xzvf Python-${PYTHON_VERSION}.tar
+tar xzvf Python-${PYTHON_VERSION}.tar.gz
 
 echo "Building python..."
 pushd Python-${PYTHON_VERSION}
