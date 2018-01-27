@@ -4,7 +4,7 @@ cd ${BOSH_INSTALL_TARGET}
 SAMBA_VERSION=4.74
 
 echo "Extracting SMB-Files"
-tar xzvf samba-${SAMBA_VERSION}.tgz
+tar xzvf samba-${SAMBA_VERSION}.tar
 
 echo "Building python..."
 pushd samba-${SAMBA_VERSION}
