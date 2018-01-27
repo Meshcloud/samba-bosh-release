@@ -8,7 +8,7 @@ tar xzvf perl-${PERL_VERSION}.tar.gz
 
 echo "Building python..."
 pushd perl-${PERL_VERSION}
-  ./Configure --prefix=$BOSH_INSTALL_TARGET
+  ./Configure -des -Dprefix=$BOSH_INSTALL_TARGET
   make
   make install
 popd
