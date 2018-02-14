@@ -1,9 +1,9 @@
 click/click-6.7.tar.gz:
   size: 279019
   sha: c16e7cb561a40c385ae8d1a50528e549cc1d8e94
-flask/flask-0.12.2.tar.gz:
-  size: 557526
-  sha: 8bca984a833aa65181ab20fa058143c0cf406c52
+flask/flask-0.12.2.tar:
+  size: 1525760
+  sha: 2bab5d4d59952b2039f37f13f812a7d4dc336fb8
 itsdangerous/itsdangerous-0.24.tar.gz:
   size: 46541
   sha: 0a6ae9c20cd72e89d75314ebc7b0f390f93e6a0d
@@ -26,8 +26,8 @@ samba/samba-4.7.4.tar:
   size: 99737600
   sha: a35bdb5597b9cb8f51bd6846c0cae8cbfbf24af1
 setuptools/setuptools-38.4.0.tar.gz:
-  size: 691991
-  sha: 534ddf7ee810c5f6b018ca1ef2050e77d5a7e7dd
+  size: 692455
+  sha: 3604b95ef6f4d7248e61dcbd5c7accea3698ceab
 werkzeug/Werkzeug-0.14.1.tar.gz:
   size: 1185546
   sha: 4b979fb960c5b5507ccb8a705931fa217013483d
