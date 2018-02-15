@@ -9,7 +9,7 @@ case $1 in
 
         mkdir -p $RUN_DIR
         chown -R vcap:vcap $RUN_DIR
-        status=$(cat /home/vcap/.status)
+        status=$(cat /home/vcap/.status) 
         while [ "$status" != "done" ]; do
             sleep 2
             status=$(cat /home/vcap/.status)
