@@ -1,0 +1,15 @@
+set -e
+set -e
+cp -r openssl/* ${BOSH_INSTALL_TARGET}
+cd ${BOSH_INSTALL_TARGET}
+OPENSSL_VERSION=1.1.1-pre2
+
+echo "Extracting SMB-Files"
+tar xzvf openssl-${SAMBA_VERSION}.tar
+
+echo "Building openssl..."
+pushd openssl-${SAMBA_VERSION}
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make
+  make install
+popd

@@ -13,6 +13,9 @@ jinja/Jinja2-2.10.tar.gz:
 markupsafe/MarkupSafe-1.0.tar.gz:
   size: 14356
   sha: 9072e80a7faa0f49805737a48f3d871eb1c48728
+openssl/openssl-1.1.1-pre2.tar.gz:
+  size: 6485957
+  sha: 11be9034aa6b84eb8bfff7accc2a1a3f940deef9
 perl/perl-5.20.1.tar.gz:
   size: 15777569
   sha: dad920583cab07e96bb8860a70eebc5fa9cf8e4d
