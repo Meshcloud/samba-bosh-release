@@ -5,11 +5,11 @@ cd ${BOSH_INSTALL_TARGET}
 OPENSSL_VERSION=1.1.1-pre2
 
 echo "Extracting SMB-Files"
-tar xzvf openssl-${SAMBA_VERSION}.tar
+tar xzvf openssl-${OPENSSL_VERSION}.tar.gz
 
 echo "Building openssl..."
-pushd openssl-${SAMBA_VERSION}
-  ./configure --prefix=$BOSH_INSTALL_TARGET
+pushd openssl-${OPENSSL_VERSION}
+  ./config --prefix=$BOSH_INSTALL_TARGET
   make
   make install
 popd
