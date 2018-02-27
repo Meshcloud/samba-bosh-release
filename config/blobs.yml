@@ -22,9 +22,9 @@ perl/perl-5.20.1.tar.gz:
 pycrypto/pycrypto-2.6.1.tar.gz:
   size: 446240
   sha: aeda3ed41caf1766409d4efc689b9ca30ad6aeb2
-python/Python-2.7.tar.gz:
-  size: 14204657
-  sha: 2e595bfd89283b1d6e1fb5a11feda5672bfda0cd
+python/Python-2.7.tgz:
+  size: 12952680
+  sha: ec15e4a2246ac7ec9b2459f974aef695a7c3fa12
 samba/samba-4.7.4.tar:
   size: 99737600
   sha: a35bdb5597b9cb8f51bd6846c0cae8cbfbf24af1

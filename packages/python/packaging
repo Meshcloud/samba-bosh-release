@@ -39,7 +39,7 @@ cp -r click/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}
 
 echo "Extracting python..."
-tar xzvf Python-${PYTHON_VERSION}.tar.gz
+tar xzvf Python-${PYTHON_VERSION}.tgz
 
 export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/libffi/lib/pkgconfig:$PKG_CONFIG_PATH
 
