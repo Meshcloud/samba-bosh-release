@@ -1,9 +1,9 @@
 click/click-6.7.tar.gz:
   size: 279019
   sha: c16e7cb561a40c385ae8d1a50528e549cc1d8e94
-flask/flask-0.12.2.tar:
-  size: 1525760
-  sha: 2bab5d4d59952b2039f37f13f812a7d4dc336fb8
+flask/Flask-0.12.2.tar.gz:
+  size: 548510
+  sha: 8193757ded6a4f0e7c9a3ce291bf3ae3a1d402c5
 itsdangerous/itsdangerous-0.24.tar.gz:
   size: 46541
   sha: 0a6ae9c20cd72e89d75314ebc7b0f390f93e6a0d
