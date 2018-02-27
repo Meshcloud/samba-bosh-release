@@ -5,7 +5,7 @@ dependencies:
 
 files:
 - pycrypto/pycrypto-2.6.1.tar.gz
-- python/Python-2.7.tar.gz
+- python/Python-2.7.tgz
 - werkzeug/Werkzeug-0.14.1.tar.gz
 - jinja/Jinja2-2.10.tar.gz
 - setuptools/setuptools-38.4.0.tar.gz
