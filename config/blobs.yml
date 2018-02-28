@@ -1,6 +1,9 @@
 click/click-6.7.tar.gz:
   size: 279019
   sha: c16e7cb561a40c385ae8d1a50528e549cc1d8e94
+flask-basic-auth/Flask-BasicAuth-0.2.0.tar.gz:
+  size: 16052
+  sha: fd79d7c1b43a29b6686d2f527f7493dc1b350285
 flask/Flask-0.12.2.tar.gz:
   size: 548510
   sha: 8193757ded6a4f0e7c9a3ce291bf3ae3a1d402c5

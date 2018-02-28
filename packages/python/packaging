@@ -20,6 +20,7 @@ FLASK_VERSION=0.12.2
 MARKUPSAFE_VERSION=1.0
 ITSDANGEROUS_VERSION=0.24
 CLICK_VERSION=6.7
+FLASK_BASIC_VERSION=0.2.0
 
 
 
@@ -33,6 +34,8 @@ cp -r flask/* ${BOSH_INSTALL_TARGET}
 cp -r markupsafe/* ${BOSH_INSTALL_TARGET}
 cp -r itsdangerous/* ${BOSH_INSTALL_TARGET}
 cp -r click/* ${BOSH_INSTALL_TARGET}
+cp -r flask-basic-auth/* ${BOSH_INSTALL_TARGET}
+
 
 
 
@@ -66,5 +69,7 @@ packageInstallation "MarkupSafe" $MARKUPSAFE_VERSION
 packageInstallation "itsdangerous" $ITSDANGEROUS_VERSION
 packageInstallation "click" $CLICK_VERSION
 packageInstallation "Flask" $FLASK_VERSION
+packageInstallation "Flask-BasicAuth" $FLASK_BASIC_VERSION
+
 
 
