@@ -21,7 +21,7 @@ chmod -R 770 $STORAGEPATH
 mkdir -p /etc/samba
 cat "$BOSHDIR/smb.conf" | tee -a "/etc/samba/smb.conf"
 #restart service 
-/var/vcap/packages/samba/sbin/smbd
+/var/vcap/packages/samba/sbin/smbd --configfile=/etc/samba/smb.conf
 #move credential script to bin
 cp "$BOSHDIR/bin/get_credentials" "/usr/local/bin/get_credentials.sh"
 chmod a+x /usr/local/bin/get_credentials.sh
