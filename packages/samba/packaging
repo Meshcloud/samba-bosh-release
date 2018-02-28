@@ -1,6 +1,6 @@
 export PATH=/var/vcap/packages/python/bin:$PATH
 export PYTHONPATH=/var/vcap/packages/python/lib/python/site-packages
-export PYTHON_CONFIG="/usr/bin/python2-config" 
+
 set -e
 cp -r samba/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}
@@ -9,7 +9,7 @@ SAMBA_VERSION=4.7.4
 echo "Extracting SMB-Files"
 tar -xvf samba-${SAMBA_VERSION}.tar
 
-echo "Building python..."
+echo "Building samba..."
 pushd samba-${SAMBA_VERSION}
   ./configure --prefix=$BOSH_INSTALL_TARGET
   make
