@@ -11,7 +11,9 @@ tar -xvf samba-${SAMBA_VERSION}.tar
 
 echo "Building samba..."
 pushd samba-${SAMBA_VERSION}
-  ./configure --prefix=$BOSH_INSTALL_TARGET --without-acl-support --without-pam --disable-python --without-ad-dc
+  apt-get install python -y 
+  apt-get install python-dev -y
+  ./configure --prefix=$BOSH_INSTALL_TARGET --without-acl-support --without-pam --without-ad-dc
   make
   make install
 popd
