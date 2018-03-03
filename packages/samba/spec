@@ -6,5 +6,5 @@ dependencies:
 - perl
 
 files:
-- samba/samba-4.7.4.tar
+- samba/samba-4.7.4.tar.gz
 - pathvariables.sh

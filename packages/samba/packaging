@@ -13,5 +13,4 @@ tar -xzvf samba-${SAMBA_VERSION}.tar.gz
 echo "Building samba..."
 pushd samba-${SAMBA_VERSION}
   make install
-
 popd

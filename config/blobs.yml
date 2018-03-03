@@ -28,9 +28,6 @@ pycrypto/pycrypto-2.6.1.tar.gz:
 python/Python-2.7.tgz:
   size: 12952680
   sha: ec15e4a2246ac7ec9b2459f974aef695a7c3fa12
-samba/samba-4.7.4.tar:
-  size: 99737600
-  sha: a35bdb5597b9cb8f51bd6846c0cae8cbfbf24af1
 samba/samba-4.7.4.tar.gz:
   size: 80408627
   sha: 805971ed70b49f5ef45be46ba9cab7baf4265f28
