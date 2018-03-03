@@ -2,7 +2,7 @@
 
 RUN_DIR=/var/vcap/sys/run/smb
 PIDFILE=${RUN_DIR}/pid
-
+source /var/vcap/packages/samba/pathvariables.sh
 case $1 in
     
     start)
@@ -14,13 +14,16 @@ case $1 in
             sleep 2
             status=$(cat /home/vcap/.status)
         done
-        echo $(pgrep smb) > $PIDFILE
+        smbd -D
+        nmbd -D
+        echo $(pgrep smbd) > $PIDFILE
         ;;
     stop)
-        kill -9 $(pgrep -f 'nfsd')
+        kill -9 $(pgrep -f 'smbd')
+        kill -9 $(pgrep -f 'nmbd')
         kill -9 `cat $PIDFILE`
         rm -f $PIDFILE
-
+        
         ;;
 
     *)

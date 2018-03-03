@@ -1,0 +1,1 @@
+export PATH=/var/vcap/packages/samba/bin/:/var/vcap/packages/samba/sbin/:$PATH

@@ -6,14 +6,12 @@ cp -r samba/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}
 SAMBA_VERSION=4.7.4
 
+source pathvariables.sh
 echo "Extracting SMB-Files"
-tar -xvf samba-${SAMBA_VERSION}.tar
+tar -xzvf samba-${SAMBA_VERSION}.tar.gz
 
 echo "Building samba..."
 pushd samba-${SAMBA_VERSION}
-  apt-get install python -y 
-  apt-get install python-dev -y
-  ./configure --prefix=$BOSH_INSTALL_TARGET --without-acl-support --without-pam --without-ad-dc
-  make
   make install
+
 popd

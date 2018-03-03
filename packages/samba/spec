@@ -7,3 +7,4 @@ dependencies:
 
 files:
 - samba/samba-4.7.4.tar
+- pathvariables.sh
