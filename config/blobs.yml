@@ -29,8 +29,8 @@ python/Python-2.7.tgz:
   size: 12952680
   sha: ec15e4a2246ac7ec9b2459f974aef695a7c3fa12
 samba/samba-4.7.4.tar.gz:
-  size: 80408627
-  sha: 805971ed70b49f5ef45be46ba9cab7baf4265f28
+  size: 80476666
+  sha: 1cb5cde728a97ca9a35dd4c77c26f619dab198c0
 setuptools/setuptools-38.4.0.tar.gz:
   size: 692455
   sha: 3604b95ef6f4d7248e61dcbd5c7accea3698ceab
