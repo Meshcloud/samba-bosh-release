@@ -6,11 +6,11 @@ cp -r samba/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}
 SAMBA_VERSION=4.7.4
 
-source pathvariables.sh
-echo "Extracting SMB-Files"
-tar -xzvf samba-${SAMBA_VERSION}.tar.gz
+#source pathvariables.sh
+#echo "Extracting SMB-Files"
+tar -xzvf samba.tar.gz
 
-echo "Building samba..."
-pushd samba-${SAMBA_VERSION}
-  make install
-popd
+#echo "Building samba..."
+#pushd samba-${SAMBA_VERSION}
+ # make install
+#popd
