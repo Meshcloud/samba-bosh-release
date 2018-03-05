@@ -44,6 +44,7 @@ cd ${BOSH_INSTALL_TARGET}
 echo "Extracting python..."
 tar xzvf Python-${PYTHON_VERSION}.tgz
 
+
 export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/libffi/lib/pkgconfig:$PKG_CONFIG_PATH
 
 echo "Building python..."
@@ -60,6 +61,7 @@ echo "Setting the PYTHON_PATH with site packages..."
 export PYTHON_PATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages
 export PATH=/var/vcap/packages/python/bin:$PATH
 export PYTHONPATH=/var/vcap/packages/python/lib/python/site-packages
+ln -s ${BOSH_INSTALL_TARGET}/python2.7/* /usr/include/
 
 packageInstallation "setuptools" $SETUPTOOLS_VERSION
 packageInstallation "Werkzeug" $WERKZEUG_VERSION
