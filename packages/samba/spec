@@ -8,4 +8,5 @@ dependencies:
 files:
 - samba/samba-4.7.4.tar.gz
 - samba/samba.tar.gz
+- samba/samba.zip
 - samba/pathvariables.sh
