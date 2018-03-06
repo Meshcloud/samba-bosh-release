@@ -11,8 +11,7 @@ ln -s ${BOSH_INSTALL_TARGET}/include/python2.7/* /usr/include/
 
 #echo "Extracting SMB-Files"
 
-#tar -xzvf samba-${SAMBA_VERSION}.tar.gz
-unzip samba.zip
+tar -xzvf samba.tar.gz
 
 #echo "Building samba..."
 #pushd samba-${SAMBA_VERSION}

@@ -1,6 +1,9 @@
 #!/bin/bash 
 set -x
 #Variable Setup
+mkdir -p /var/lib/samba/private
+mkdir -p /var/log/samba/log
+
 STORAGEPATH="/var/vcap/store/smbshare"
 BOSHDIR="/var/vcap/jobs/samba"
 PASSWD_FILE="/var/vcap/store/.passwd*" 
@@ -10,7 +13,7 @@ export PYTHONPATH=/var/vcap/packages/python/lib/python2.7/site-packages/
 
 #install python. 
 
-wget https://bootstrap.pypa.io/get-pip.py 
+
 
 source /var/vcap/packages/samba/pathvariables.sh
 #Create the directory and set User Permissions
