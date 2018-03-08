@@ -7,7 +7,7 @@ set -e
 cp -r samba/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}
 SAMBA_VERSION=4.7.4
-ln -s ${BOSH_INSTALL_TARGET}/include/python2.7/* /usr/include/
+
 
 #echo "Extracting SMB-Files"
 
