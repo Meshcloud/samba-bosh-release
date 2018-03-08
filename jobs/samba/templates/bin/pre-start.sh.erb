@@ -1,31 +1,29 @@
 #!/bin/bash 
 set -x
 #Variable Setup
+mkdir -p /var/lib/samba/private
+mkdir -p /var/log/samba/log
+
 STORAGEPATH="/var/vcap/store/smbshare"
 BOSHDIR="/var/vcap/jobs/samba"
 PASSWD_FILE="/var/vcap/store/.passwd*" 
 USERGROUP=<%= p("smb.usergroup") %>
-#install packages via apt
-apt-get update
-apt-get install samba -y
+export PATH=/var/vcap/packages/python/bin:$PATH
+export PYTHONPATH=/var/vcap/packages/python/lib/python2.7/site-packages/
+
 #install python. 
 
-wget https://bootstrap.pypa.io/get-pip.py 
-sudo python get-pip.py  
 
-sudo /usr/local/bin/pip install --upgrade virtualenv 
-sudo /usr/local/bin/pip install Flask 
-sudo /usr/local/bin/pip install Flask-BasicAuth
 
+source /var/vcap/packages/samba/pathvariables.sh
 #Create the directory and set User Permissions
 groupadd $USERGROUP
 mkdir -p $STORAGEPATH
 chown root:$USERGROUP $STORAGEPATH
 chmod -R 770 $STORAGEPATH
 #changing smb.conf smb conf
+mkdir -p /etc/samba
 cat "$BOSHDIR/smb.conf" | tee -a "/etc/samba/smb.conf"
-#restart service 
-sudo service smbd restart
 #move credential script to bin
 cp "$BOSHDIR/bin/get_credentials" "/usr/local/bin/get_credentials.sh"
 chmod a+x /usr/local/bin/get_credentials.sh

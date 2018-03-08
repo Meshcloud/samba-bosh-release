@@ -1,1 +1,45 @@
---- {}
+/samba/samba.zip:
+  size: 24974700
+  sha: 5b562ca4da17c6e0a3354abfddca74851e989d2b
+click/click-6.7.tar.gz:
+  size: 279019
+  sha: c16e7cb561a40c385ae8d1a50528e549cc1d8e94
+flask-basic-auth/Flask-BasicAuth-0.2.0.tar.gz:
+  size: 16052
+  sha: fd79d7c1b43a29b6686d2f527f7493dc1b350285
+flask/Flask-0.12.2.tar.gz:
+  size: 548510
+  sha: 8193757ded6a4f0e7c9a3ce291bf3ae3a1d402c5
+itsdangerous/itsdangerous-0.24.tar.gz:
+  size: 46541
+  sha: 0a6ae9c20cd72e89d75314ebc7b0f390f93e6a0d
+jinja/Jinja2-2.10.tar.gz:
+  size: 261631
+  sha: 34b69e5caab12ee37b9df69df9018776c008b7b8
+markupsafe/MarkupSafe-1.0.tar.gz:
+  size: 14356
+  sha: 9072e80a7faa0f49805737a48f3d871eb1c48728
+openssl/openssl-1.1.1-pre2.tar.gz:
+  size: 6485957
+  sha: 11be9034aa6b84eb8bfff7accc2a1a3f940deef9
+perl/perl-5.20.1.tar.gz:
+  size: 15777569
+  sha: dad920583cab07e96bb8860a70eebc5fa9cf8e4d
+pycrypto/pycrypto-2.6.1.tar.gz:
+  size: 446240
+  sha: aeda3ed41caf1766409d4efc689b9ca30ad6aeb2
+python/Python-2.7.tgz:
+  size: 12952680
+  sha: ec15e4a2246ac7ec9b2459f974aef695a7c3fa12
+samba/samba-4.7.4.tar.gz:
+  size: 80476666
+  sha: 1cb5cde728a97ca9a35dd4c77c26f619dab198c0
+samba/samba.tar.gz:
+  size: 18173544
+  sha: d2104524578a11901a3ae63c9f0bdc81c19989cf
+setuptools/setuptools-38.4.0.tar.gz:
+  size: 692455
+  sha: 3604b95ef6f4d7248e61dcbd5c7accea3698ceab
+werkzeug/Werkzeug-0.14.1.tar.gz:
+  size: 1185546
+  sha: 4b979fb960c5b5507ccb8a705931fa217013483d

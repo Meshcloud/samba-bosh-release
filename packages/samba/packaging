@@ -1,1 +1,19 @@
+export PATH=/var/vcap/packages/python/bin:$PATH
+export PATH=/var/vcap/packages/python/include/python2.7/:$PATH
+export PYTHONPATH=/var/vcap/packages/python/lib/python2.7/site-packages/
+export CPATH=/var/vcap/packages/python/include/python2.7/
+
 set -e
+cp -r samba/* ${BOSH_INSTALL_TARGET}
+cd ${BOSH_INSTALL_TARGET}
+SAMBA_VERSION=4.7.4
+ln -s ${BOSH_INSTALL_TARGET}/include/python2.7/* /usr/include/
+
+#echo "Extracting SMB-Files"
+
+tar -xzvf samba.tar.gz
+
+#echo "Building samba..."
+#pushd samba-${SAMBA_VERSION}
+ # make install
+#popd

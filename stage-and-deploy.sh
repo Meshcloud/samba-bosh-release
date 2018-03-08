@@ -8,4 +8,4 @@ bosh create-release --force
 
 bosh upload-release
 
-bosh -d smb deploy -n manifests/smb-dev-local.yml
+bosh -d samba deploy -n manifests/smb-dev-local.yml

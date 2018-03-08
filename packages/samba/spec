@@ -1,6 +1,11 @@
 ---
 name: samba
 
-dependencies: []
+dependencies: 
+- python
+- perl
 
-files: []
+files:
+- samba/samba-4.7.4.tar.gz
+- samba/samba.tar.gz
+- samba/pathvariables.sh

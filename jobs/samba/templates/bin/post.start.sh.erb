@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x 
 BOSHDIR="/var/vcap/jobs/samba"
+export PATH=/var/vcap/packages/python/bin:$PATH
+export PYTHONPATH=/var/vcap/packages/python/lib/python2.7/site-packages/
 # run rest-bakcend
-su - root -c  "sudo /usr/bin/python '$BOSHDIR/backend.py' & "
+su - root -c  "sudo /var/vcap/packages/python/bin/python '$BOSHDIR/backend.py' & "
 exit 0
